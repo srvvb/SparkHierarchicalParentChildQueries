@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sb.sparkrecursivequery</groupId>
+    <artifactId>toplevelhierarchy</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <inceptionYear>2017</inceptionYear>
+
+
+    <properties>
+        <scala.version>2.10.5</scala.version>
+		<spark.version>1.6.3</spark.version>
+        <sparkscala.version>2.10</sparkscala.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.specs</groupId>
+            <artifactId>specs</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${sparkscala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-graphx_${sparkscala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+		<!-- Adding graphframes & spark sql -  if needed in future  -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${sparkscala.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>graphframes</groupId>
+            <artifactId>graphframes</artifactId>
+            <version>0.3.0-spark1.6-s_2.10</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>SparkPackagesRepo</id>
+            <name>Spark Packages Repo</name>
+            <url>https://dl.bintray.com/spark-packages/maven/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+</project>
