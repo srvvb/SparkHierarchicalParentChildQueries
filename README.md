@@ -37,34 +37,23 @@ The code demonstrates basic use of graphx and pregel api to take input and gener
 
 Note: Added incorrect data by making EMP006,EMP007 & EMP008 to form a cyclic graph between them. It's important to identify bad\poor quality data.
 
+
 .
 
-+------+----------+---------+------+------+
 
-|EMP_ID|FIRST_NAME|LAST_NAME| TITLE|MGR_ID|
-
-+------+----------+---------+------+------+
-
+| EMP_ID | FIRST_NAME | LAST_NAME | TITLE | MGR_ID |
+| ------ | ---------- | --------- | ----- | ------ |
 |EMP001| Bob| Baker| CEO| |
-
 |EMP002| Jim| Lake| CIO|EMP001|
-
 |EMP003| Tim| Gorab| MGR|EMP002|
-
 |EMP004| Rick| Summer| MGR|EMP002|
-
 |EMP005| Sam| Cap| Lead|EMP004|
-
 |EMP006| Ron| Hubb|Sr.Dev|EMP008|
-
 |EMP007| Cathy| Watson| Dev|EMP006|
-
 |EMP008| Samantha| Lion|Intern|EMP007|
 
-+------+----------+---------+------+------+
 
 .
-
 
 .
 
@@ -82,29 +71,18 @@ IS_LEAF - Node with no child nodes (nodes with no outgoing edges). Value is set 
 
 .
 
-+------+----------+---------+------+------+-----+------+---------------------------+---------+-------+
 
-|EMP_ID|FIRST_NAME|LAST_NAME| TITLE|MGR_ID|LEVEL| ROOT| PATH|IS_CYCLIC|IS_LEAF|
 
-+------+----------+---------+------+------+-----+------+---------------------------+---------+-------+
-
+| EMP_ID | FIRST_NAME | LAST_NAME | TITLE | MGR_ID | LEVEL | ROOT | PATH | IS_CYCLIC | IS_LEAF |
+| ------ | ---------- | --------- | ----- | ------ | ----- | ---- | ---- | --------- | ------- |
 |EMP001| Bob| Baker| CEO| | 1|EMP001| EMP001| 0| 0|
-
 |EMP002| Jim| Lake| CIO|EMP001| 2|EMP001| EMP001/EMP002| 0| 0|
-
 |EMP003| Tim| Gorab| MGR|EMP002| 3|EMP001| EMP001/EMP002/EMP003| 0| 1|
-
 |EMP004| Rick| Summer| MGR|EMP002| 3|EMP001| EMP001/EMP002/EMP004| 0| 0|
-
 |EMP005| Sam| Cap| Lead|EMP004| 4|EMP001|EMP001/EMP002/EMP004/EMP005| 0| 1|
-
 |EMP006| Ron| Hubb|Sr.Dev|EMP008| 3|EMP007| EMP007/EMP008/EMP006| 1| 0|
-
 |EMP007| Cathy| Watson| Dev|EMP006| 3|EMP008| EMP008/EMP006/EMP007| 1| 0|
-
 |EMP008| Samantha| Lion|Intern|EMP007| 3|EMP006| EMP006/EMP007/EMP008| 1| 0|
-
-+------+----------+---------+------+------+-----+------+---------------------------+---------+-------+
 
 .
 
